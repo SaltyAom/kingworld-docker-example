@@ -35,7 +35,7 @@ jobs:
         project: saltyaom
         location: gke.cluster-rcf2
         name: kingworld-demo
-        image: ${{ IMAGE_NAME }}
+        image: ghcr.io/saltyaom/kingworld-demo
         minReplicas: 2
         maxReplicas: 20
       env:
