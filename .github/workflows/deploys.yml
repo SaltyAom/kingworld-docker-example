@@ -32,9 +32,9 @@ jobs:
 
     - uses: deploys-app/deploys-action@v1
       with:
-        project: hifumin
+        project: saltyaom
         location: gke.cluster-rcf2
-        name: hifumin
+        name: kingworld-demo
         image: $IMAGE_NAME
         minReplicas: 2
         maxReplicas: 20
