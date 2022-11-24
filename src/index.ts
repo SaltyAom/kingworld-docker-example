@@ -4,7 +4,7 @@ import { staticPlugin } from '@kingworldjs/static'
 const app = new KingWorld()
     .use(staticPlugin())
     .get('/', () => 'Hi')
-    .get('/header', ({ request }) => {
+    .all('/header', ({ request }) => {
         const header: Record<string, string> = {}
         for (const v of request.headers.entries()) header[v[0]] = v[1]
 
