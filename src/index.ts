@@ -2,7 +2,11 @@ import { KingWorld, t } from 'kingworld'
 import { staticPlugin } from '@kingworldjs/static'
 
 const app = new KingWorld()
-    .use(staticPlugin())
+    .use(
+        staticPlugin({
+            prefix: ''
+        })
+    )
     .get('/', () => 'Hi')
     .all('/header', ({ request }) => {
         const header: Record<string, string> = {}
