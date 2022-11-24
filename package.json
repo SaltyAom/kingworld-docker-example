@@ -6,8 +6,8 @@
     "dev": "nodemon --config nodemon.json"
   },
   "dependencies": {
-    "@kingworldjs/static": "^0.0.0-experimental.1",
-    "kingworld": "0.0.0-experimental.34"
+    "@kingworldjs/static": "^0.0.0-experimental.2",
+    "kingworld": "0.0.0-experimental.53"
   },
   "devDependencies": {
     "bun-types": "^0.2.2",

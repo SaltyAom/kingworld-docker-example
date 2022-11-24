@@ -1,11 +1,17 @@
-import KingWorld from 'kingworld'
-import staticPlugin from '@kingworldjs/static'
+import { KingWorld, t } from 'kingworld'
+import { staticPlugin } from '@kingworldjs/static'
 
-new KingWorld()
-    .use(staticPlugin, {
-        prefix: ''
+const app = new KingWorld()
+    .use(staticPlugin())
+    .get('/', () => 'Hi')
+    .get('/header', ({ request }) => {
+        const header: Record<string, string> = {}
+        for (const v of request.headers.entries()) header[v[0]] = v[1]
+
+        return header
     })
-    .get('/', () => 'Hello Docker')
-    .listen(8080)
+    .listen(3000)
 
-console.log('🦊 KINGWORLD is running at :3000')
+console.log(
+    `🦊 KingWorld is running at http://${app.server?.hostname}:${app.server?.port}`
+)
